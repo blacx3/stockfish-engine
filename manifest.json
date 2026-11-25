@@ -1,0 +1,37 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icons/icon128.png",
+         "16": "icons/icon16.png",
+         "32": "icons/icon32.png",
+         "48": "icons/icon48.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "styles.css" ],
+      "js": [ "helpers.js", "content.js" ],
+      "matches": [ "*://*.chess.com/*" ],
+      "run_at": "document_idle"
+   } ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+   },
+   "description": "Board layout and move visualization tools.",
+   "host_permissions": [ "*://*.chess.com/*" ],
+   "icons": {
+      "128": "icons/icon128.png",
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+   },
+   "manifest_version": 3,
+   "name": "Board Tools",
+   "permissions": [ "storage" ],
+   "version": "1.1",
+   "web_accessible_resources": [ {
+      "matches": [ "*://*.chess.com/*" ],
+      "resources": [ "analysis.js", "analysis.wasm", "worker.html", "worker-init.js" ]
+   } ]
+}

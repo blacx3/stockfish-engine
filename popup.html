@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h3>Stockfish Chess Engine</h3>
+  
+  <div class="settings-block" style="background-color: #2b2b36; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+    <div class="toggle-container" style="box-shadow: none; border-radius: 12px 12px 0 0; border-bottom: 1px solid #3b3b46;">
+      <span class="label-text">Engine Overlay</span>
+      <label class="switch">
+        <input type="checkbox" id="toggle-engine" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="toggle-container" style="box-shadow: none; border-radius: 0 0 12px 12px; padding-top: 10px; padding-bottom: 10px;">
+      <span class="label-text" id="analysis-side-label">Analysis Side</span>
+      <label class="switch side-switch">
+        <input type="checkbox" id="toggle-side">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="settings-container">
+    <div class="setting-item">
+      <div class="setting-header">
+        <span class="label-text">Depth</span>
+        <span class="value-text" id="depth-value">15</span>
+      </div>
+      <input type="range" id="depth-slider" min="10" max="30" value="15" class="range-slider">
+    </div>
+    
+    <div class="setting-item">
+      <div class="setting-header">
+        <span class="label-text">Think Time (ms)</span>
+        <span class="value-text" id="time-value">1000</span>
+      </div>
+      <input type="range" id="time-slider" min="100" max="5000" step="100" value="1000" class="range-slider">
+    </div>
+  </div>
+
+  <div class="best-moves-container" id="best-moves-container">
+    <div class="best-moves-header">Best Moves</div>
+    <div id="best-moves-message" class="best-moves-message">Open a chess board</div>
+    <ul id="best-moves" class="best-moves-list"></ul>
+  </div>
+
+  <div class="status-container">
+    <div class="status" id="status">Active</div>
+  </div>
+
+  <div class="coffee-container">
+    <a href="https://buymeacoffee.com/jwolfe" target="_blank" class="coffee-link">
+      ☕ Buy me a coffee
+    </a>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
